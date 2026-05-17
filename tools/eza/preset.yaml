@@ -1,0 +1,22 @@
+name: tools/eza
+description: Modern replacement for ls with colors and icons
+version: "1.0"
+os: [linux, darwin]
+tags: [cli, file-listing, productivity]
+depends: [core/system]
+recommends: []
+packages:
+  - eza
+outputs:
+  - target: shell/zshrc.zsh
+    source: eza.zsh
+    priority: 60
+  - target: shell/bashrc.sh
+    source: eza.bash
+    priority: 60
+hooks:
+  post_install: hooks/post_install.sh
+config:
+  icons: true
+  colors: true
+  git: true
