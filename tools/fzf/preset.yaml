@@ -1,0 +1,23 @@
+name: tools/fzf
+description: Command-line fuzzy finder with shell integration
+version: "1.0"
+os: [linux, darwin]
+tags: [cli, search, productivity]
+depends: [core/system]
+recommends: []
+packages:
+  - fzf
+outputs:
+  - target: shell/zshrc.zsh
+    source: fzf.zsh
+    priority: 65
+  - target: shell/bashrc.sh
+    source: fzf.bash
+    priority: 65
+hooks:
+  post_install: hooks/post_install.sh
+config:
+  default_opts: "--height 40% --layout=reverse --border"
+  ctrl_t: true
+  ctrl_r: true
+  alt_c: true
