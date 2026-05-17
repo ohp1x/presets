@@ -1,0 +1,16 @@
+name: shell/zsh
+description: Zsh shell setup with sensible defaults
+version: "1.0"
+os: [linux, darwin]
+tags: [shell]
+depends: [core/system]
+recommends: [zsh/omz, prompt/starship]
+packages:
+  - zsh
+outputs:
+  - target: shell/zshrc.zsh
+    source: zsh-env.zsh
+    priority: 10
+hooks:
+  post_install: hooks/post_install.sh
+config: {}

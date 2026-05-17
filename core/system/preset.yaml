@@ -1,0 +1,12 @@
+name: core/system
+description: Base system bootstrap — ensures package manager is available
+version: "1.0"
+os: [linux, darwin]
+tags: [core, bootstrap]
+required: true
+depends: []
+packages: []
+outputs: []
+hooks:
+  post_install: hooks/post_install.sh
+config: {}

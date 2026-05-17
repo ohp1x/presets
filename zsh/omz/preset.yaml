@@ -1,0 +1,17 @@
+name: zsh/omz
+description: Oh My Zsh plugin framework
+version: "1.0"
+os: [linux, darwin]
+tags: [shell, plugins, zsh]
+depends: [shell/zsh]
+recommends: [tools/fzf]
+packages: []
+outputs:
+  - target: shell/zshrc.zsh
+    source: omz.zsh
+    priority: 20
+hooks:
+  post_install: hooks/post_install.sh
+config:
+  theme: robbyrussell
+  plugins: "git z"
